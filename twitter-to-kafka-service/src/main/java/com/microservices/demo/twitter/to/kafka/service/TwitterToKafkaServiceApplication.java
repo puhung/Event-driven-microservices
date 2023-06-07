@@ -2,6 +2,7 @@ package com.microservices.demo.twitter.to.kafka.service;
 
 import java.util.Arrays;
 
+import com.microservices.demo.twitter.to.kafka.service.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -17,9 +18,12 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
 	private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
 	
 	private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
+    private final StreamRunner streamRunner;
 	
-	public TwitterToKafkaServiceApplication(TwitterToKafkaServiceConfigData configData) {
+	public TwitterToKafkaServiceApplication(TwitterToKafkaServiceConfigData configData,
+                                            StreamRunner runner) {
         this.twitterToKafkaServiceConfigData = configData;
+        this.streamRunner = runner;
     }
 	
     public static void main(String[] args) {
@@ -34,5 +38,6 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     	// convert the list to string array to print it nicely on the console, using arrays to string
     	LOG.info(Arrays.toString(twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[] {}))); // Log the keywords in the run method by getting the keywords from config data object
         LOG.info(twitterToKafkaServiceConfigData.getWelcomeMessage());
+        streamRunner.start();
     }
 }

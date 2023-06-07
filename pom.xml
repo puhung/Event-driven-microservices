@@ -16,6 +16,7 @@
 	<description>Microservices demo project for Spring Boot</description>
 	<modules>
 		<module>twitter-to-kafka-service</module>
+		<module>app-config-data</module>
 	</modules>
 	<properties>
 		<java.version>19</java.version>
@@ -39,8 +40,8 @@
 
 			<dependency>
 				<groupId>org.twitter4j</groupId>
-				<artifactId>twitter4j-core</artifactId>
-				<version>4.1.1</version>
+				<artifactId>twitter4j-stream</artifactId>
+				<version>4.0.7</version>
 			</dependency>
 
 			<dependency>

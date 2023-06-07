@@ -35,6 +35,11 @@
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-stream</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
