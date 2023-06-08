@@ -1,8 +1,6 @@
 package com.microservices.demo.twitter.to.kafka.service;
 
-import java.util.Arrays;
-
-import com.microservices.demo.config.TwitterToKafkaServiceConfigData;
+import com.microservices.demo.twitter.to.kafka.service.init.StreamInitializer;
 import com.microservices.demo.twitter.to.kafka.service.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,14 +16,13 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
 	// We said the current class name while creating the log variable, 
 	// so that it will mention this class name during logging.
 	private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
-	
-	private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
+
     private final StreamRunner streamRunner;
-	
-	public TwitterToKafkaServiceApplication(TwitterToKafkaServiceConfigData configData,
-                                            StreamRunner runner) {
-        this.twitterToKafkaServiceConfigData = configData;
+    private final StreamInitializer streamInitializer;
+
+    public TwitterToKafkaServiceApplication(StreamRunner runner, StreamInitializer initializer) {
         this.streamRunner = runner;
+        this.streamInitializer = initializer;
     }
 	
     public static void main(String[] args) {
@@ -36,10 +33,7 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
     	LOG.info("Application start!"); //we use info level which was set in the logback xml file
-    	
-    	// convert the list to string array to print it nicely on the console, using arrays to string
-    	LOG.info(Arrays.toString(twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[] {}))); // Log the keywords in the run method by getting the keywords from config data object
-        LOG.info(twitterToKafkaServiceConfigData.getWelcomeMessage());
+        streamInitializer.init();
         streamRunner.start();
     }
 }
