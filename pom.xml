@@ -21,11 +21,14 @@
 		<module>kafka/kafka-model</module>
 		<module>kafka/kafka-admin</module>
 		<module>kafka/kafka-producer</module>
+		<module>common-config</module>
 	</modules>
 	<properties>
 		<java.version>19</java.version>
 		<spring-boot.version>3.1.0</spring-boot.version>
 		<avro.version>1.10.0</avro.version>
+		<spring-kafka.version>3.0.7</spring-kafka.version>
+		<spring-retry.version>2.0.1</spring-retry.version>
 	</properties>
 
 	<dependencyManagement>
@@ -41,6 +44,11 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>common-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>1.18.28</version>
@@ -52,16 +60,30 @@
 				<version>${avro.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka</artifactId>
+				<version>${spring-kafka.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.twitter4j</groupId>
 				<artifactId>twitter4j-stream</artifactId>
 				<version>4.0.7</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.retry</groupId>
+				<artifactId>spring-retry</artifactId>
+				<version>${spring-retry.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<version>${spring-boot.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${spring-boot.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
