@@ -40,6 +40,7 @@
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<spring-cloud.version>3.1.4</spring-cloud.version>
 		<spring-cloud-dependencies.version>2021.0.4</spring-cloud-dependencies.version>
+		<elastic.version>7.17.4</elastic.version>
 	</properties>
 
 	<repositories>
@@ -190,6 +191,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elastic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elastic.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
