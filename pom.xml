@@ -25,6 +25,8 @@
 		<module>config-server</module>
         <module>kafka/kafka-consumer</module>
         <module>kafka-to-elastic-service</module>
+        <module>elastic</module>
+        <module>elastic/elastic-model</module>
     </modules>
 	<properties>
 		<java.version>11</java.version>
