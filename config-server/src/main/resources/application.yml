@@ -5,3 +5,21 @@ logging:
   level:
     ROOT: INFO
     org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/puhung/spring-cloud-config-server-repository
+          default-label: main
+          username: puhung
+          password: '{cipher}5844d80142cc0d0f030d20dc17ac5e7472e8acd7b93263be3094764bf38248ae414b31d78e75426b7c151fe1646187656a2cd1647d362d919141fdda60b672ee'
+          clone-on-start: true
+    fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: '{cipher}992ec7e86ab4ed58d00baa5dd2c7e26fb46dcee1ea5f13ce28b8a93783b22630ae1b86b6f587adc98922675a5ac48e7c'
