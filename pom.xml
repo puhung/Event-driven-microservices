@@ -26,7 +26,6 @@
         <module>kafka/kafka-consumer</module>
         <module>kafka-to-elastic-service</module>
         <module>elastic</module>
-        <module>elastic/elastic-model</module>
     </modules>
 	<properties>
 		<java.version>11</java.version>
@@ -100,11 +99,6 @@
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>kafka-consumer</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.microservices.demo</groupId>
-				<artifactId>elastic-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

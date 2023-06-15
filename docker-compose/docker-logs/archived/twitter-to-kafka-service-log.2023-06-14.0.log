@@ -1,0 +1,989 @@
+2023-06-14 06:49:59 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.19 on 5f97c69a8da0 with PID 564 (/workspace/BOOT-INF/classes started by root in /workspace)
+2023-06-14 06:49:59 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 06:50:00 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2023-06-14 06:50:01 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=671cc6e94eaaff7a5d2994dc785499edf68ec4cf, state=null
+2023-06-14 06:50:11 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=64a985f8-a3c7-379f-98fe-42a6c2b5d75d
+2023-06-14 06:50:17 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-14 06:50:18 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 06:50:18 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 06:50:18 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686725418883
+2023-06-14 06:50:24 [main] [,] INFO   o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d34bdc52-c465-42e2-b47f-1a6c431a059e
+
+2023-06-14 06:50:30 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-14 06:50:30 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 43.624 seconds (JVM running for 47.781)
+2023-06-14 06:50:30 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application start!
+2023-06-14 06:50:30 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-14 06:50:30 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-14 06:50:30 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 06:50:32 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 06:50:36 [main] [,] INFO   c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2023-06-14 06:50:36 [main] [,] INFO   c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [Java, Microservices, Kafka, Elasticsearch]
+2023-06-14 06:50:37 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text congue adipiscing sit consectetuer ipsum elit libero ultricies Elasticsearch pulvinar lectus libero sed sed lectus amet sending to kafka topic twitter-topic
+2023-06-14 06:50:38 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5376203475609768645, "id": 7085088581320631614, "text": "congue adipiscing sit consectetuer ipsum elit libero ultricies Elasticsearch pulvinar lectus libero sed sed lectus amet", "createdAt": 1686725436000}' to topic='twitter-topic'
+2023-06-14 06:50:38 [pool-4-thread-1] [,] INFO   o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2023-06-14 06:50:38 [pool-4-thread-1] [,] INFO   i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	context.name.strategy = class io.confluent.kafka.serializers.context.NullContextNameStrategy
+	id.compatibility.strict = true
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	normalize.schemas = false
+	proxy.host = 
+	proxy.port = -1
+	schema.format = null
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://schema-registry:8081]
+	use.latest.version = false
+	use.schema.id = -1
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2023-06-14 06:50:39 [pool-4-thread-1] [,] INFO   o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-06-14 06:50:39 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 06:50:39 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 06:50:39 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686725439663
+2023-06-14 06:50:39 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: YELFncT_T7mympOqg2e2Uw
+2023-06-14 06:50:39 [kafka-producer-network-thread | producer-1] [,] INFO   o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 0 with epoch 0
+2023-06-14 06:50:39 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-0 to 0 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 06:50:39 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-1 to 0 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 06:50:39 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-2 to 0 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 06:50:51 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text adipiscing Lorem lectus ipsum sit Kafka amet sed purus sending to kafka topic twitter-topic
+2023-06-14 06:50:51 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4434695865251407676, "id": 3590649950821982653, "text": "adipiscing Lorem lectus ipsum sit Kafka amet sed purus", "createdAt": 1686725451000}' to topic='twitter-topic'
+2023-06-14 06:51:01 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet malesuada elit ultricies Microservices congue ultricies ultricies sending to kafka topic twitter-topic
+2023-06-14 06:51:01 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7935746161821700124, "id": 5773760642039147987, "text": "amet malesuada elit ultricies Microservices congue ultricies ultricies", "createdAt": 1686725461000}' to topic='twitter-topic'
+2023-06-14 06:51:11 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa elit malesuada elit massa Kafka sit amet purus purus sending to kafka topic twitter-topic
+2023-06-14 06:51:11 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 469157866163416726, "id": 8860801196464193137, "text": "massa elit malesuada elit massa Kafka sit amet purus purus", "createdAt": 1686725471000}' to topic='twitter-topic'
+2023-06-14 06:51:21 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sed sit consectetuer purus Lorem libero congue Microservices massa libero ipsum porttitor ultricies sending to kafka topic twitter-topic
+2023-06-14 06:51:21 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5287822896254526428, "id": 5023385510902999758, "text": "sed sit consectetuer purus Lorem libero congue Microservices massa libero ipsum porttitor ultricies", "createdAt": 1686725481000}' to topic='twitter-topic'
+2023-06-14 06:51:31 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text elit malesuada lectus Lorem Kafka Lorem massa sending to kafka topic twitter-topic
+2023-06-14 06:51:32 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6427992239238879584, "id": 145689875999726618, "text": "elit malesuada lectus Lorem Kafka Lorem massa", "createdAt": 1686725491000}' to topic='twitter-topic'
+2023-06-14 06:51:42 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa sit Lorem Kafka dolor libero sending to kafka topic twitter-topic
+2023-06-14 06:51:42 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5035933852355141926, "id": 3420623663188063804, "text": "massa sit Lorem Kafka dolor libero", "createdAt": 1686725502000}' to topic='twitter-topic'
+2023-06-14 06:51:52 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text lectus purus massa congue magna consectetuer sed sed Elasticsearch libero posuere amet pulvinar congue purus sending to kafka topic twitter-topic
+2023-06-14 06:51:52 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 900575879116811481, "id": 6212194729359652453, "text": "lectus purus massa congue magna consectetuer sed sed Elasticsearch libero posuere amet pulvinar congue purus", "createdAt": 1686725512000}' to topic='twitter-topic'
+2023-06-14 06:52:02 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet consectetuer amet lectus consectetuer porttitor libero Elasticsearch sit Maecenas dolor libero posuere sending to kafka topic twitter-topic
+2023-06-14 06:52:02 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1093283804402555875, "id": 7431475094956550804, "text": "amet consectetuer amet lectus consectetuer porttitor libero Elasticsearch sit Maecenas dolor libero posuere", "createdAt": 1686725522000}' to topic='twitter-topic'
+2023-06-14 06:52:12 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text purus purus adipiscing Maecenas ipsum malesuada posuere Java malesuada lectus lectus porttitor amet consectetuer sending to kafka topic twitter-topic
+2023-06-14 06:52:12 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6731815423136897264, "id": 3104573404273712359, "text": "purus purus adipiscing Maecenas ipsum malesuada posuere Java malesuada lectus lectus porttitor amet consectetuer", "createdAt": 1686725532000}' to topic='twitter-topic'
+2023-06-14 06:52:22 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text pulvinar consectetuer sed elit Microservices Lorem lectus sending to kafka topic twitter-topic
+2023-06-14 06:52:22 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 8481108977687611910, "id": 3705730041604482772, "text": "pulvinar consectetuer sed elit Microservices Lorem lectus", "createdAt": 1686725542000}' to topic='twitter-topic'
+2023-06-14 06:52:32 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ipsum magna pulvinar sed amet amet magna Elasticsearch porttitor Maecenas elit Fusce consectetuer Maecenas sending to kafka topic twitter-topic
+2023-06-14 06:52:32 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5249002431598692537, "id": 8221226356495927361, "text": "ipsum magna pulvinar sed amet amet magna Elasticsearch porttitor Maecenas elit Fusce consectetuer Maecenas", "createdAt": 1686725552000}' to topic='twitter-topic'
+2023-06-14 06:52:42 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas pulvinar consectetuer congue Lorem elit malesuada sit Java purus libero Maecenas sit ultricies dolor ipsum sending to kafka topic twitter-topic
+2023-06-14 06:52:43 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1447075239848149797, "id": 8919286718832571404, "text": "Maecenas pulvinar consectetuer congue Lorem elit malesuada sit Java purus libero Maecenas sit ultricies dolor ipsum", "createdAt": 1686725562000}' to topic='twitter-topic'
+2023-06-14 06:52:53 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text posuere libero ipsum dolor dolor elit pulvinar elit Java malesuada porttitor amet amet Lorem sit sending to kafka topic twitter-topic
+2023-06-14 06:52:53 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3689180175398090574, "id": 7386205366386234879, "text": "posuere libero ipsum dolor dolor elit pulvinar elit Java malesuada porttitor amet amet Lorem sit", "createdAt": 1686725573000}' to topic='twitter-topic'
+2023-06-14 06:53:03 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text lectus ipsum sed sed Fusce Kafka sed Fusce amet sending to kafka topic twitter-topic
+2023-06-14 06:53:04 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2855454132350351458, "id": 2266215953798344142, "text": "lectus ipsum sed sed Fusce Kafka sed Fusce amet", "createdAt": 1686725583000}' to topic='twitter-topic'
+2023-06-14 06:53:15 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text libero elit ultricies Fusce elit amet ipsum Microservices pulvinar magna posuere Maecenas magna sending to kafka topic twitter-topic
+2023-06-14 06:53:15 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5127600361147227853, "id": 3458589599707588810, "text": "libero elit ultricies Fusce elit amet ipsum Microservices pulvinar magna posuere Maecenas magna", "createdAt": 1686725595000}' to topic='twitter-topic'
+2023-06-14 06:53:25 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa purus lectus ipsum Kafka Fusce adipiscing congue sending to kafka topic twitter-topic
+2023-06-14 06:53:25 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1156637877486827726, "id": 2429667098325913658, "text": "massa purus lectus ipsum Kafka Fusce adipiscing congue", "createdAt": 1686725605000}' to topic='twitter-topic'
+2023-06-14 06:53:36 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ipsum Fusce ultricies Fusce lectus ultricies ultricies Kafka lectus ultricies purus massa ultricies sending to kafka topic twitter-topic
+2023-06-14 06:53:36 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1216892203384283677, "id": 6492597545575087127, "text": "ipsum Fusce ultricies Fusce lectus ultricies ultricies Kafka lectus ultricies purus massa ultricies", "createdAt": 1686725616000}' to topic='twitter-topic'
+2023-06-14 06:53:46 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa adipiscing sit Lorem Kafka posuere massa dolor sending to kafka topic twitter-topic
+2023-06-14 06:53:46 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6328747780220792355, "id": 9161165645398020078, "text": "massa adipiscing sit Lorem Kafka posuere massa dolor", "createdAt": 1686725626000}' to topic='twitter-topic'
+2023-06-14 06:53:56 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet posuere Maecenas lectus libero sed Java Fusce sed consectetuer purus porttitor sending to kafka topic twitter-topic
+2023-06-14 06:53:56 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1962453390782853787, "id": 4324818830034401333, "text": "amet posuere Maecenas lectus libero sed Java Fusce sed consectetuer purus porttitor", "createdAt": 1686725636000}' to topic='twitter-topic'
+2023-06-14 06:54:07 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet lectus congue Java malesuada adipiscing sending to kafka topic twitter-topic
+2023-06-14 06:54:07 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3167531005201962278, "id": 6369877727998381248, "text": "amet lectus congue Java malesuada adipiscing", "createdAt": 1686725646000}' to topic='twitter-topic'
+2023-06-14 06:54:17 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ultricies Lorem ultricies consectetuer dolor Kafka ipsum ipsum sit sending to kafka topic twitter-topic
+2023-06-14 06:54:17 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7959426032281620516, "id": 1276480397681815614, "text": "ultricies Lorem ultricies consectetuer dolor Kafka ipsum ipsum sit", "createdAt": 1686725657000}' to topic='twitter-topic'
+2023-06-14 06:54:28 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas amet sit lectus Microservices purus adipiscing purus sending to kafka topic twitter-topic
+2023-06-14 06:54:28 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3423531910727783819, "id": 2662743898957340142, "text": "Maecenas amet sit lectus Microservices purus adipiscing purus", "createdAt": 1686725667000}' to topic='twitter-topic'
+2023-06-14 06:54:38 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text purus lectus libero adipiscing libero Lorem lectus lectus Java Lorem libero elit lectus purus congue sit sending to kafka topic twitter-topic
+2023-06-14 06:54:39 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1090835235619654684, "id": 8862736565706129432, "text": "purus lectus libero adipiscing libero Lorem lectus lectus Java Lorem libero elit lectus purus congue sit", "createdAt": 1686725678000}' to topic='twitter-topic'
+2023-06-14 06:54:51 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text consectetuer lectus congue Lorem congue massa sed sed Elasticsearch adipiscing ipsum purus ultricies malesuada dolor malesuada sending to kafka topic twitter-topic
+2023-06-14 06:54:52 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1049462281135211139, "id": 2962838352916307716, "text": "consectetuer lectus congue Lorem congue massa sed sed Elasticsearch adipiscing ipsum purus ultricies malesuada dolor malesuada", "createdAt": 1686725690000}' to topic='twitter-topic'
+2023-06-14 06:55:05 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas amet congue posuere consectetuer sit amet posuere Java elit Maecenas ipsum elit amet elit Fusce sending to kafka topic twitter-topic
+2023-06-14 06:55:05 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1492623575225198103, "id": 3107622022740235744, "text": "Maecenas amet congue posuere consectetuer sit amet posuere Java elit Maecenas ipsum elit amet elit Fusce", "createdAt": 1686725705000}' to topic='twitter-topic'
+2023-06-14 06:55:15 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sed elit libero dolor ultricies libero purus Java malesuada purus posuere amet dolor sending to kafka topic twitter-topic
+2023-06-14 06:55:16 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 815396943267869666, "id": 8796651751786742883, "text": "sed elit libero dolor ultricies libero purus Java malesuada purus posuere amet dolor", "createdAt": 1686725715000}' to topic='twitter-topic'
+2023-06-14 06:55:24 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node -3 disconnected.
+2023-06-14 06:55:27 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text dolor ipsum elit Kafka pulvinar Fusce sending to kafka topic twitter-topic
+2023-06-14 06:55:27 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5228293599307568022, "id": 8275772142358528655, "text": "dolor ipsum elit Kafka pulvinar Fusce", "createdAt": 1686725727000}' to topic='twitter-topic'
+2023-06-14 06:55:38 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text consectetuer ipsum elit porttitor malesuada dolor Kafka Maecenas posuere porttitor sit amet sending to kafka topic twitter-topic
+2023-06-14 06:55:38 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7583121545056771797, "id": 533768015774035034, "text": "consectetuer ipsum elit porttitor malesuada dolor Kafka Maecenas posuere porttitor sit amet", "createdAt": 1686725737000}' to topic='twitter-topic'
+2023-06-14 06:55:48 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text adipiscing libero consectetuer ultricies malesuada consectetuer Kafka lectus magna lectus amet sending to kafka topic twitter-topic
+2023-06-14 06:55:48 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4458820071970676400, "id": 5405886229712801376, "text": "adipiscing libero consectetuer ultricies malesuada consectetuer Kafka lectus magna lectus amet", "createdAt": 1686725748000}' to topic='twitter-topic'
+2023-06-14 06:55:58 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text consectetuer congue elit sit sit massa Java ultricies amet pulvinar Fusce sending to kafka topic twitter-topic
+2023-06-14 06:55:58 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5809386172243647341, "id": 3045465215627366344, "text": "consectetuer congue elit sit sit massa Java ultricies amet pulvinar Fusce", "createdAt": 1686725758000}' to topic='twitter-topic'
+2023-06-14 06:56:08 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem massa ultricies Fusce dolor pulvinar congue Kafka purus consectetuer porttitor Maecenas pulvinar sit sending to kafka topic twitter-topic
+2023-06-14 06:56:08 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2321243060141303337, "id": 2867255033012939573, "text": "Lorem massa ultricies Fusce dolor pulvinar congue Kafka purus consectetuer porttitor Maecenas pulvinar sit", "createdAt": 1686725768000}' to topic='twitter-topic'
+2023-06-14 06:56:18 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas pulvinar pulvinar pulvinar ultricies purus Java amet sed sed adipiscing ultricies sending to kafka topic twitter-topic
+2023-06-14 06:56:18 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5804834972353832720, "id": 415135635756069944, "text": "Maecenas pulvinar pulvinar pulvinar ultricies purus Java amet sed sed adipiscing ultricies", "createdAt": 1686725778000}' to topic='twitter-topic'
+2023-06-14 06:56:29 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text elit sit purus Maecenas adipiscing consectetuer Java Maecenas Maecenas consectetuer posuere sending to kafka topic twitter-topic
+2023-06-14 06:56:30 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4637895944568409610, "id": 5856053420265754773, "text": "elit sit purus Maecenas adipiscing consectetuer Java Maecenas Maecenas consectetuer posuere", "createdAt": 1686725788000}' to topic='twitter-topic'
+2023-06-14 06:56:40 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet porttitor porttitor magna dolor Maecenas Elasticsearch posuere ipsum pulvinar adipiscing ultricies sending to kafka topic twitter-topic
+2023-06-14 06:56:40 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3166146282440559560, "id": 8586639624195257578, "text": "amet porttitor porttitor magna dolor Maecenas Elasticsearch posuere ipsum pulvinar adipiscing ultricies", "createdAt": 1686725800000}' to topic='twitter-topic'
+2023-06-14 06:56:50 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem amet dolor consectetuer adipiscing porttitor amet Java amet adipiscing ipsum pulvinar Fusce porttitor sending to kafka topic twitter-topic
+2023-06-14 06:56:52 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5805180051816127078, "id": 8657701916879543630, "text": "Lorem amet dolor consectetuer adipiscing porttitor amet Java amet adipiscing ipsum pulvinar Fusce porttitor", "createdAt": 1686725810000}' to topic='twitter-topic'
+2023-06-14 06:57:03 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa lectus pulvinar posuere pulvinar malesuada Microservices amet Lorem Lorem amet sending to kafka topic twitter-topic
+2023-06-14 06:57:03 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 8115091228978570909, "id": 7608719612144052856, "text": "massa lectus pulvinar posuere pulvinar malesuada Microservices amet Lorem Lorem amet", "createdAt": 1686725823000}' to topic='twitter-topic'
+2023-06-14 06:57:13 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text libero dolor libero Microservices amet congue sending to kafka topic twitter-topic
+2023-06-14 06:57:13 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6724897020199983818, "id": 8080534116071109489, "text": "libero dolor libero Microservices amet congue", "createdAt": 1686725833000}' to topic='twitter-topic'
+2023-06-14 06:57:23 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text purus congue ipsum porttitor libero lectus Elasticsearch ipsum massa posuere elit Fusce sending to kafka topic twitter-topic
+2023-06-14 06:57:23 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5321348853248034699, "id": 7076054027326185453, "text": "purus congue ipsum porttitor libero lectus Elasticsearch ipsum massa posuere elit Fusce", "createdAt": 1686725843000}' to topic='twitter-topic'
+2023-06-14 06:57:33 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text porttitor dolor sed posuere Kafka massa Maecenas sending to kafka topic twitter-topic
+2023-06-14 06:57:33 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4756953037439269601, "id": 2661749149532795500, "text": "porttitor dolor sed posuere Kafka massa Maecenas", "createdAt": 1686725853000}' to topic='twitter-topic'
+2023-06-14 06:57:43 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text malesuada sit adipiscing libero Lorem ultricies Kafka amet consectetuer ipsum adipiscing sending to kafka topic twitter-topic
+2023-06-14 06:57:43 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3933295837196683422, "id": 2388751419173312959, "text": "malesuada sit adipiscing libero Lorem ultricies Kafka amet consectetuer ipsum adipiscing", "createdAt": 1686725863000}' to topic='twitter-topic'
+2023-06-14 06:57:53 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem porttitor ultricies pulvinar posuere pulvinar Elasticsearch posuere congue lectus massa sending to kafka topic twitter-topic
+2023-06-14 06:57:53 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6730157211654575722, "id": 6228457873293895496, "text": "Lorem porttitor ultricies pulvinar posuere pulvinar Elasticsearch posuere congue lectus massa", "createdAt": 1686725873000}' to topic='twitter-topic'
+2023-06-14 06:58:04 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa sit porttitor Maecenas sed Maecenas Elasticsearch purus sed ultricies amet sending to kafka topic twitter-topic
+2023-06-14 06:58:04 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3177842954711116843, "id": 1323864489022192857, "text": "massa sit porttitor Maecenas sed Maecenas Elasticsearch purus sed ultricies amet", "createdAt": 1686725883000}' to topic='twitter-topic'
+2023-06-14 06:58:14 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text magna Fusce malesuada purus magna pulvinar lectus Elasticsearch malesuada ultricies Lorem dolor magna sending to kafka topic twitter-topic
+2023-06-14 06:58:14 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4214082287561186089, "id": 2023721478514358145, "text": "magna Fusce malesuada purus magna pulvinar lectus Elasticsearch malesuada ultricies Lorem dolor magna", "createdAt": 1686725894000}' to topic='twitter-topic'
+2023-06-14 06:58:24 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Fusce consectetuer libero sit adipiscing Elasticsearch lectus Fusce lectus massa sending to kafka topic twitter-topic
+2023-06-14 06:58:25 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1344084064572326196, "id": 9210609967888988806, "text": "Fusce consectetuer libero sit adipiscing Elasticsearch lectus Fusce lectus massa", "createdAt": 1686725904000}' to topic='twitter-topic'
+2023-06-14 06:58:35 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas Maecenas massa lectus Java pulvinar posuere sending to kafka topic twitter-topic
+2023-06-14 06:58:35 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4698794880441394763, "id": 7138548784808839020, "text": "Maecenas Maecenas massa lectus Java pulvinar posuere", "createdAt": 1686725915000}' to topic='twitter-topic'
+2023-06-14 06:58:45 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text malesuada congue magna Maecenas Java consectetuer purus sending to kafka topic twitter-topic
+2023-06-14 06:58:45 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4185299175459266558, "id": 8833106423738792082, "text": "malesuada congue magna Maecenas Java consectetuer purus", "createdAt": 1686725925000}' to topic='twitter-topic'
+2023-06-14 06:58:56 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text lectus porttitor lectus adipiscing ipsum porttitor magna massa Kafka sit massa ipsum purus sit posuere dolor sending to kafka topic twitter-topic
+2023-06-14 06:58:56 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2841593556954653017, "id": 3415501786849498235, "text": "lectus porttitor lectus adipiscing ipsum porttitor magna massa Kafka sit massa ipsum purus sit posuere dolor", "createdAt": 1686725936000}' to topic='twitter-topic'
+2023-06-14 06:59:06 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text libero congue ipsum sit amet Kafka sit lectus posuere sending to kafka topic twitter-topic
+2023-06-14 06:59:06 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6969316549822992211, "id": 7180097020943685703, "text": "libero congue ipsum sit amet Kafka sit lectus posuere", "createdAt": 1686725946000}' to topic='twitter-topic'
+2023-06-14 06:59:17 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text pulvinar sed libero lectus Java posuere sit Fusce sending to kafka topic twitter-topic
+2023-06-14 06:59:17 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2429674730460884658, "id": 5101342617085210733, "text": "pulvinar sed libero lectus Java posuere sit Fusce", "createdAt": 1686725957000}' to topic='twitter-topic'
+2023-06-14 06:59:27 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas Lorem amet Elasticsearch ipsum amet sending to kafka topic twitter-topic
+2023-06-14 06:59:27 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1521926334078422677, "id": 639958389167948298, "text": "Maecenas Lorem amet Elasticsearch ipsum amet", "createdAt": 1686725967000}' to topic='twitter-topic'
+2023-06-14 06:59:37 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa sit malesuada congue lectus Maecenas Fusce lectus Kafka Fusce dolor dolor consectetuer adipiscing dolor sending to kafka topic twitter-topic
+2023-06-14 06:59:37 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6249592418901549418, "id": 8562446637106084483, "text": "massa sit malesuada congue lectus Maecenas Fusce lectus Kafka Fusce dolor dolor consectetuer adipiscing dolor", "createdAt": 1686725977000}' to topic='twitter-topic'
+2023-06-14 06:59:47 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text congue adipiscing malesuada adipiscing lectus massa sed porttitor Java consectetuer sit libero massa sed ultricies amet sending to kafka topic twitter-topic
+2023-06-14 06:59:47 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5402451121475020400, "id": 3364297500289777314, "text": "congue adipiscing malesuada adipiscing lectus massa sed porttitor Java consectetuer sit libero massa sed ultricies amet", "createdAt": 1686725987000}' to topic='twitter-topic'
+2023-06-14 06:59:47 [kafka-producer-network-thread | producer-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node -3 disconnected.
+2023-06-14 06:59:57 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text libero libero purus sit Kafka massa pulvinar sending to kafka topic twitter-topic
+2023-06-14 06:59:57 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4571939839165141640, "id": 3633164881296280924, "text": "libero libero purus sit Kafka massa pulvinar", "createdAt": 1686725997000}' to topic='twitter-topic'
+2023-06-14 07:00:07 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet congue ultricies sed porttitor sed dolor Microservices Fusce sit dolor adipiscing massa sending to kafka topic twitter-topic
+2023-06-14 07:00:08 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3982065237058149637, "id": 688086108459503909, "text": "amet congue ultricies sed porttitor sed dolor Microservices Fusce sit dolor adipiscing massa", "createdAt": 1686726007000}' to topic='twitter-topic'
+2023-06-14 07:00:18 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet congue dolor Fusce dolor Java ipsum sit magna sending to kafka topic twitter-topic
+2023-06-14 07:00:19 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2968023169994483323, "id": 2849899399358842578, "text": "amet congue dolor Fusce dolor Java ipsum sit magna", "createdAt": 1686726018000}' to topic='twitter-topic'
+2023-06-14 07:00:26 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 1 disconnected.
+2023-06-14 07:00:30 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text malesuada ultricies porttitor Maecenas Elasticsearch porttitor dolor ipsum sending to kafka topic twitter-topic
+2023-06-14 07:00:30 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 8989024141220809063, "id": 5569282084894682729, "text": "malesuada ultricies porttitor Maecenas Elasticsearch porttitor dolor ipsum", "createdAt": 1686726029000}' to topic='twitter-topic'
+2023-06-14 07:00:41 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text elit sit massa Elasticsearch Fusce ipsum sending to kafka topic twitter-topic
+2023-06-14 07:00:41 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7255325435318024945, "id": 8485536042459224264, "text": "elit sit massa Elasticsearch Fusce ipsum", "createdAt": 1686726041000}' to topic='twitter-topic'
+2023-06-14 07:00:52 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit Fusce magna malesuada Fusce Java adipiscing consectetuer pulvinar sending to kafka topic twitter-topic
+2023-06-14 07:00:55 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2986246708715298574, "id": 5766489246202548053, "text": "sit Fusce magna malesuada Fusce Java adipiscing consectetuer pulvinar", "createdAt": 1686726051000}' to topic='twitter-topic'
+2023-06-14 07:01:06 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text magna porttitor malesuada sit sed Microservices congue sed libero ultricies sending to kafka topic twitter-topic
+2023-06-14 07:01:06 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5383414148686377211, "id": 4469305262016753488, "text": "magna porttitor malesuada sit sed Microservices congue sed libero ultricies", "createdAt": 1686726066000}' to topic='twitter-topic'
+2023-06-14 07:01:16 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Maecenas posuere porttitor pulvinar Java dolor Fusce sending to kafka topic twitter-topic
+2023-06-14 07:01:17 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2184471363205224069, "id": 6969672448384311151, "text": "Maecenas posuere porttitor pulvinar Java dolor Fusce", "createdAt": 1686726076000}' to topic='twitter-topic'
+2023-06-14 07:01:27 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text lectus ultricies dolor ipsum malesuada Fusce dolor Elasticsearch dolor consectetuer massa libero pulvinar sending to kafka topic twitter-topic
+2023-06-14 07:01:27 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5518957781285220479, "id": 2399888283338363370, "text": "lectus ultricies dolor ipsum malesuada Fusce dolor Elasticsearch dolor consectetuer massa libero pulvinar", "createdAt": 1686726087000}' to topic='twitter-topic'
+2023-06-14 07:01:37 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa elit pulvinar pulvinar congue massa consectetuer Java amet Maecenas Fusce sed Lorem lectus sending to kafka topic twitter-topic
+2023-06-14 07:01:38 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5242015961143995704, "id": 448044876434951522, "text": "massa elit pulvinar pulvinar congue massa consectetuer Java amet Maecenas Fusce sed Lorem lectus", "createdAt": 1686726097000}' to topic='twitter-topic'
+2023-06-14 07:01:48 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text posuere ipsum consectetuer malesuada dolor elit congue amet Java elit posuere posuere amet dolor Lorem dolor sending to kafka topic twitter-topic
+2023-06-14 07:01:48 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7007054628577239139, "id": 51081875653301717, "text": "posuere ipsum consectetuer malesuada dolor elit congue amet Java elit posuere posuere amet dolor Lorem dolor", "createdAt": 1686726108000}' to topic='twitter-topic'
+2023-06-14 07:02:05 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text adipiscing elit purus sit lectus sed Maecenas lectus Elasticsearch amet lectus sed elit Lorem pulvinar sending to kafka topic twitter-topic
+2023-06-14 07:02:05 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7728713380903506908, "id": 5208842886747815319, "text": "adipiscing elit purus sit lectus sed Maecenas lectus Elasticsearch amet lectus sed elit Lorem pulvinar", "createdAt": 1686726124000}' to topic='twitter-topic'
+2023-06-14 07:02:16 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text pulvinar sed elit amet sed purus lectus Java malesuada congue sit malesuada sed sending to kafka topic twitter-topic
+2023-06-14 07:02:16 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3127157971029077892, "id": 1488199135666896198, "text": "pulvinar sed elit amet sed purus lectus Java malesuada congue sit malesuada sed", "createdAt": 1686726136000}' to topic='twitter-topic'
+2023-06-14 07:02:26 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sed malesuada Fusce Elasticsearch pulvinar elit sending to kafka topic twitter-topic
+2023-06-14 07:02:26 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5899845915573382264, "id": 7723370635939937880, "text": "sed malesuada Fusce Elasticsearch pulvinar elit", "createdAt": 1686726146000}' to topic='twitter-topic'
+2023-06-14 07:02:36 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text pulvinar Maecenas dolor malesuada Java libero congue sending to kafka topic twitter-topic
+2023-06-14 07:02:36 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3147355330835267329, "id": 5532994626181364814, "text": "pulvinar Maecenas dolor malesuada Java libero congue", "createdAt": 1686726156000}' to topic='twitter-topic'
+2023-06-14 07:02:46 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit Fusce purus congue libero sed pulvinar amet Elasticsearch Maecenas congue sed adipiscing consectetuer posuere sending to kafka topic twitter-topic
+2023-06-14 07:02:46 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1209662746724094020, "id": 8372275176384880456, "text": "sit Fusce purus congue libero sed pulvinar amet Elasticsearch Maecenas congue sed adipiscing consectetuer posuere", "createdAt": 1686726166000}' to topic='twitter-topic'
+2023-06-14 07:02:56 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text consectetuer amet sed porttitor dolor Elasticsearch congue Maecenas congue sit sending to kafka topic twitter-topic
+2023-06-14 07:02:57 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 569017988895919628, "id": 6322580812453818228, "text": "consectetuer amet sed porttitor dolor Elasticsearch congue Maecenas congue sit", "createdAt": 1686726176000}' to topic='twitter-topic'
+2023-06-14 07:03:01 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 3 disconnected.
+2023-06-14 07:03:01 [kafka-producer-network-thread | producer-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 3 disconnected.
+2023-06-14 07:03:03 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 2 disconnected.
+2023-06-14 07:03:03 [kafka-producer-network-thread | producer-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 2 disconnected.
+2023-06-14 18:49:43 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.19 on 5f97c69a8da0 with PID 562 (/workspace/BOOT-INF/classes started by root in /workspace)
+2023-06-14 18:49:43 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 18:49:44 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2023-06-14 18:49:44 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=671cc6e94eaaff7a5d2994dc785499edf68ec4cf, state=null
+2023-06-14 18:49:49 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=64a985f8-a3c7-379f-98fe-42a6c2b5d75d
+2023-06-14 18:49:53 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-14 18:49:54 [main] [,] WARN   org.apache.kafka.clients.ClientUtils - Couldn't resolve server kafka-broker-1:9092 from bootstrap.servers as DNS resolution failed for kafka-broker-1
+2023-06-14 18:49:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 18:49:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 18:49:55 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686768595172
+2023-06-14 18:49:59 [main] [,] INFO   o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 11879a49-32a7-4393-8761-0a4a2c0cbefd
+
+2023-06-14 18:50:02 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-14 18:50:02 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 29.989 seconds (JVM running for 34.423)
+2023-06-14 18:50:02 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application start!
+2023-06-14 18:50:02 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-14 18:50:02 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-14 18:50:02 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 18:50:18 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 18:50:19 [main] [,] ERROR  o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: com.microservices.demo.kafka.admin.exception.KafkaClientException: Reached max number of retry for reading kafka topic(s)!
+	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.checkMaxRetry(KafkaAdminClient.java:111)
+	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.checkSchemaRegistry(KafkaAdminClient.java:83)
+	at com.microservices.demo.twitter.to.kafka.service.init.impl.KafkaStreamInitializer.init(KafkaStreamInitializer.java:26)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 13 common frames omitted
+2023-06-14 18:50:19 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-14 18:50:19 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-14 18:50:19 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-14 18:50:19 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-14 18:50:19 [main] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer!
+2023-06-14 18:53:01 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.19 on 5f97c69a8da0 with PID 636 (/workspace/BOOT-INF/classes started by root in /workspace)
+2023-06-14 18:53:01 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 18:53:01 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2023-06-14 18:53:01 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=671cc6e94eaaff7a5d2994dc785499edf68ec4cf, state=null
+2023-06-14 18:53:08 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=64a985f8-a3c7-379f-98fe-42a6c2b5d75d
+2023-06-14 18:53:15 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-14 18:53:21 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 18:53:21 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 18:53:21 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686768801552
+2023-06-14 18:53:33 [main] [,] INFO   o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: eecf3fb0-3863-46d8-af68-c8a72f9e95c6
+
+2023-06-14 18:53:38 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-14 18:53:38 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 47.88 seconds (JVM running for 52.813)
+2023-06-14 18:53:38 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application start!
+2023-06-14 18:53:38 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-14 18:53:38 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-14 18:53:38 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 18:53:43 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 2 disconnected.
+2023-06-14 18:53:48 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2023-06-14 18:53:48 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 1 disconnected.
+2023-06-14 18:53:48 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Cancelled in-flight METADATA request with correlation id 7 due to node 1 being disconnected (elapsed time since creation: 3ms, elapsed time since send: 3ms, request timeout: 30000ms)
+2023-06-14 18:56:25 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.19 on 5f97c69a8da0 with PID 550 (/workspace/BOOT-INF/classes started by root in /workspace)
+2023-06-14 18:56:25 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 18:56:25 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2023-06-14 18:56:25 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=671cc6e94eaaff7a5d2994dc785499edf68ec4cf, state=null
+2023-06-14 18:56:31 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=64a985f8-a3c7-379f-98fe-42a6c2b5d75d
+2023-06-14 18:56:34 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-14 18:56:34 [main] [,] WARN   org.apache.kafka.clients.ClientUtils - Couldn't resolve server kafka-broker-3:9092 from bootstrap.servers as DNS resolution failed for kafka-broker-3
+2023-06-14 18:56:35 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 18:56:35 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 18:56:35 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686768995389
+2023-06-14 18:56:39 [main] [,] INFO   o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: afbdf15e-0c49-4d9b-bf30-4311a27c9777
+
+2023-06-14 18:56:41 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-14 18:56:41 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 27.664 seconds (JVM running for 32.261)
+2023-06-14 18:56:41 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application start!
+2023-06-14 18:56:41 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-14 18:56:41 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-14 18:56:41 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 18:57:17 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-14 18:57:17 [main] [,] ERROR  o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: com.microservices.demo.kafka.admin.exception.KafkaClientException: Reached max number of retry for reading kafka topic(s)!
+	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.checkMaxRetry(KafkaAdminClient.java:111)
+	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.checkSchemaRegistry(KafkaAdminClient.java:83)
+	at com.microservices.demo.twitter.to.kafka.service.init.impl.KafkaStreamInitializer.init(KafkaStreamInitializer.java:26)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	... 13 common frames omitted
+2023-06-14 18:57:17 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-06-14 18:57:17 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-06-14 18:57:17 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-06-14 18:57:17 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-06-14 18:57:17 [main] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer!
+2023-06-14 18:58:58 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.19 on 5f97c69a8da0 with PID 557 (/workspace/BOOT-INF/classes started by root in /workspace)
+2023-06-14 18:58:58 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2023-06-14 18:58:59 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2023-06-14 18:58:59 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=671cc6e94eaaff7a5d2994dc785499edf68ec4cf, state=null
+2023-06-14 18:59:04 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=64a985f8-a3c7-379f-98fe-42a6c2b5d75d
+2023-06-14 18:59:07 [main] [,] INFO   o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-06-14 18:59:08 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 18:59:08 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 18:59:08 [main] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686769148742
+2023-06-14 18:59:12 [main] [,] INFO   o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9090e9da-a207-4171-b407-efaa338eed17
+
+2023-06-14 18:59:15 [main] [,] INFO   o.s.b.w.e.netty.NettyWebServer - Netty started on port 8181
+2023-06-14 18:59:15 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 28.756 seconds (JVM running for 34.218)
+2023-06-14 18:59:15 [main] [,] INFO   c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application start!
+2023-06-14 18:59:15 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics(s), attempt 0
+2023-06-14 18:59:15 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Create topic result [KafkaFuture{value=null,exception=null,done=false}]
+2023-06-14 18:59:15 [main] [,] INFO   c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2023-06-14 18:59:18 [main] [,] INFO   c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operations!
+2023-06-14 18:59:18 [main] [,] INFO   c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [Java, Microservices, Kafka, Elasticsearch]
+2023-06-14 18:59:18 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem elit adipiscing ultricies Elasticsearch dolor ipsum pulvinar sending to kafka topic twitter-topic
+2023-06-14 18:59:19 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6635623076256996305, "id": 2766663278724369349, "text": "Lorem elit adipiscing ultricies Elasticsearch dolor ipsum pulvinar", "createdAt": 1686769158000}' to topic='twitter-topic'
+2023-06-14 18:59:19 [pool-4-thread-1] [,] INFO   o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2023-06-14 18:59:19 [pool-4-thread-1] [,] INFO   i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	context.name.strategy = class io.confluent.kafka.serializers.context.NullContextNameStrategy
+	id.compatibility.strict = true
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	normalize.schemas = false
+	proxy.host = 
+	proxy.port = -1
+	schema.format = null
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://schema-registry:8081]
+	use.latest.version = false
+	use.schema.id = -1
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2023-06-14 18:59:20 [pool-4-thread-1] [,] INFO   o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-06-14 18:59:20 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-06-14 18:59:20 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-06-14 18:59:20 [pool-4-thread-1] [,] INFO   o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1686769160599
+2023-06-14 18:59:20 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-0 to 12 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 18:59:20 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-2 to 13 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 18:59:20 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition twitter-topic-1 to 12 since the associated topicId changed from null to 6PmvexUEQ0GHO35XkqiVLQ
+2023-06-14 18:59:20 [kafka-producer-network-thread | producer-1] [,] INFO   org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: YELFncT_T7mympOqg2e2Uw
+2023-06-14 18:59:21 [kafka-producer-network-thread | producer-1] [,] INFO   o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+2023-06-14 18:59:32 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ultricies purus sit massa Lorem Microservices dolor posuere congue sending to kafka topic twitter-topic
+2023-06-14 18:59:32 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 4036543252501004892, "id": 6769672764412745443, "text": "ultricies purus sit massa Lorem Microservices dolor posuere congue", "createdAt": 1686769172000}' to topic='twitter-topic'
+2023-06-14 18:59:42 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text elit Maecenas elit Kafka adipiscing adipiscing sending to kafka topic twitter-topic
+2023-06-14 18:59:42 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3507876875838763685, "id": 7702154966601347332, "text": "elit Maecenas elit Kafka adipiscing adipiscing", "createdAt": 1686769182000}' to topic='twitter-topic'
+2023-06-14 18:59:52 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text pulvinar ipsum porttitor Lorem elit consectetuer Kafka ultricies congue Fusce Fusce sending to kafka topic twitter-topic
+2023-06-14 18:59:52 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7796550960424486198, "id": 6701472042588403957, "text": "pulvinar ipsum porttitor Lorem elit consectetuer Kafka ultricies congue Fusce Fusce", "createdAt": 1686769192000}' to topic='twitter-topic'
+2023-06-14 19:00:03 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit porttitor amet libero Elasticsearch elit sed adipiscing sending to kafka topic twitter-topic
+2023-06-14 19:00:03 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 9153364302263438477, "id": 8765083928031147681, "text": "sit porttitor amet libero Elasticsearch elit sed adipiscing", "createdAt": 1686769202000}' to topic='twitter-topic'
+2023-06-14 19:00:13 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text magna libero Fusce malesuada Fusce Java posuere consectetuer magna lectus sending to kafka topic twitter-topic
+2023-06-14 19:00:13 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5485559346287151067, "id": 1054347637186168749, "text": "magna libero Fusce malesuada Fusce Java posuere consectetuer magna lectus", "createdAt": 1686769213000}' to topic='twitter-topic'
+2023-06-14 19:00:23 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text elit sed congue elit massa pulvinar amet sed Java consectetuer sit magna Lorem sit magna sending to kafka topic twitter-topic
+2023-06-14 19:00:23 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 9075600622786608, "id": 5257352807817013546, "text": "elit sed congue elit massa pulvinar amet sed Java consectetuer sit magna Lorem sit magna", "createdAt": 1686769223000}' to topic='twitter-topic'
+2023-06-14 19:00:33 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text porttitor congue libero malesuada congue lectus Kafka posuere congue adipiscing posuere sending to kafka topic twitter-topic
+2023-06-14 19:00:33 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 324947053015640170, "id": 1987005118821937777, "text": "porttitor congue libero malesuada congue lectus Kafka posuere congue adipiscing posuere", "createdAt": 1686769233000}' to topic='twitter-topic'
+2023-06-14 19:00:43 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text malesuada Lorem sit congue sed malesuada sed malesuada Microservices sed congue sit amet massa posuere magna sending to kafka topic twitter-topic
+2023-06-14 19:00:43 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 405828921348191818, "id": 5183788785066199253, "text": "malesuada Lorem sit congue sed malesuada sed malesuada Microservices sed congue sit amet massa posuere magna", "createdAt": 1686769243000}' to topic='twitter-topic'
+2023-06-14 19:00:53 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem massa dolor consectetuer elit adipiscing magna Kafka consectetuer pulvinar consectetuer purus libero adipiscing sending to kafka topic twitter-topic
+2023-06-14 19:00:53 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 9003508243155056690, "id": 9114155210846879394, "text": "Lorem massa dolor consectetuer elit adipiscing magna Kafka consectetuer pulvinar consectetuer purus libero adipiscing", "createdAt": 1686769253000}' to topic='twitter-topic'
+2023-06-14 19:01:03 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text posuere elit elit sit Kafka Maecenas sed sending to kafka topic twitter-topic
+2023-06-14 19:01:03 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1674724204856669773, "id": 666701426835188535, "text": "posuere elit elit sit Kafka Maecenas sed", "createdAt": 1686769263000}' to topic='twitter-topic'
+2023-06-14 19:01:13 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Lorem sit dolor massa Java amet congue consectetuer sending to kafka topic twitter-topic
+2023-06-14 19:01:13 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5297519925639868145, "id": 7827612607690599701, "text": "Lorem sit dolor massa Java amet congue consectetuer", "createdAt": 1686769273000}' to topic='twitter-topic'
+2023-06-14 19:01:23 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit lectus pulvinar massa Kafka porttitor libero adipiscing sending to kafka topic twitter-topic
+2023-06-14 19:01:23 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 5404827131620163266, "id": 5406556786523946724, "text": "sit lectus pulvinar massa Kafka porttitor libero adipiscing", "createdAt": 1686769283000}' to topic='twitter-topic'
+2023-06-14 19:01:33 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text dolor ipsum ipsum purus posuere sed Kafka ultricies porttitor elit sed purus sending to kafka topic twitter-topic
+2023-06-14 19:01:33 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 2284076686074500806, "id": 8234942406892971944, "text": "dolor ipsum ipsum purus posuere sed Kafka ultricies porttitor elit sed purus", "createdAt": 1686769293000}' to topic='twitter-topic'
+2023-06-14 19:01:43 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text posuere malesuada Fusce elit sed Elasticsearch libero Fusce ultricies purus sending to kafka topic twitter-topic
+2023-06-14 19:01:43 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7785318668787552494, "id": 2821771034933995332, "text": "posuere malesuada Fusce elit sed Elasticsearch libero Fusce ultricies purus", "createdAt": 1686769303000}' to topic='twitter-topic'
+2023-06-14 19:01:53 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit congue magna lectus malesuada Java consectetuer sed malesuada congue sending to kafka topic twitter-topic
+2023-06-14 19:01:53 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7236970357560001088, "id": 5377195070187628096, "text": "sit congue magna lectus malesuada Java consectetuer sed malesuada congue", "createdAt": 1686769313000}' to topic='twitter-topic'
+2023-06-14 19:02:03 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sit Lorem pulvinar pulvinar lectus Lorem ultricies Java congue ipsum amet dolor Fusce Fusce sending to kafka topic twitter-topic
+2023-06-14 19:02:03 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3187188908417665435, "id": 996730552606076904, "text": "sit Lorem pulvinar pulvinar lectus Lorem ultricies Java congue ipsum amet dolor Fusce Fusce", "createdAt": 1686769323000}' to topic='twitter-topic'
+2023-06-14 19:02:13 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text congue ipsum elit consectetuer elit Kafka Lorem lectus pulvinar sending to kafka topic twitter-topic
+2023-06-14 19:02:13 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 3932372896660512875, "id": 8618006738571609135, "text": "congue ipsum elit consectetuer elit Kafka Lorem lectus pulvinar", "createdAt": 1686769333000}' to topic='twitter-topic'
+2023-06-14 19:02:23 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text dolor porttitor purus porttitor amet Microservices adipiscing malesuada lectus congue sending to kafka topic twitter-topic
+2023-06-14 19:02:23 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6808622826963032816, "id": 8402736795338599698, "text": "dolor porttitor purus porttitor amet Microservices adipiscing malesuada lectus congue", "createdAt": 1686769343000}' to topic='twitter-topic'
+2023-06-14 19:02:33 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text massa posuere sit ultricies malesuada purus Microservices pulvinar ipsum consectetuer ipsum sending to kafka topic twitter-topic
+2023-06-14 19:02:33 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 6590405268009983893, "id": 8459973476824057986, "text": "massa posuere sit ultricies malesuada purus Microservices pulvinar ipsum consectetuer ipsum", "createdAt": 1686769353000}' to topic='twitter-topic'
+2023-06-14 19:02:43 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text sed elit pulvinar elit libero Elasticsearch purus amet pulvinar sending to kafka topic twitter-topic
+2023-06-14 19:02:43 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 7404557345488794205, "id": 1598999153665894111, "text": "sed elit pulvinar elit libero Elasticsearch purus amet pulvinar", "createdAt": 1686769363000}' to topic='twitter-topic'
+2023-06-14 19:02:54 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text amet ipsum elit massa Elasticsearch congue purus sending to kafka topic twitter-topic
+2023-06-14 19:02:54 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 841426077845961356, "id": 8482307402117474943, "text": "amet ipsum elit massa Elasticsearch congue purus", "createdAt": 1686769373000}' to topic='twitter-topic'
+2023-06-14 19:03:04 [pool-4-thread-1] [,] INFO   c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text porttitor ipsum purus porttitor Fusce congue ultricies Elasticsearch congue ipsum amet Fusce sit sending to kafka topic twitter-topic
+2023-06-14 19:03:04 [pool-4-thread-1] [,] INFO   c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message='{"userId": 1548758598008818981, "id": 2053149985388930628, "text": "porttitor ipsum purus porttitor Fusce congue ultricies Elasticsearch congue ipsum amet Fusce sit", "createdAt": 1686769384000}' to topic='twitter-topic'
+2023-06-14 19:03:09 [kafka-producer-network-thread | producer-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2023-06-14 19:03:09 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node -1 disconnected.
+2023-06-14 19:03:10 [kafka-producer-network-thread | producer-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node -1 disconnected.
+2023-06-14 19:03:10 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 1 disconnected.
+2023-06-14 19:03:10 [kafka-admin-client-thread | adminclient-1] [,] INFO   o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Cancelled in-flight METADATA request with correlation id 5 due to node 1 being disconnected (elapsed time since creation: 14ms, elapsed time since send: 14ms, request timeout: 30000ms)
