@@ -1,0 +1,91 @@
+2023-06-19 15:17:13 [main] [,] INFO   c.m.d.e.q.w.c.ElasticQueryWebClientApplication - Starting ElasticQueryWebClientApplication using Java 11.0.19 on rihiroshis-MacBook-Air.local with PID 20809 (/Users/lipuhung/Documents/Udemy/Master-event-driven-microservices/self-practice/microservices-demo/elastic-query-web-client/target/classes started by lipuhung in /Users/lipuhung/Documents/Udemy/Master-event-driven-microservices/self-practice/microservices-demo)
+2023-06-19 15:17:13 [background-preinit] [,] INFO   o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-19 15:17:13 [main] [,] INFO   c.m.d.e.q.w.c.ElasticQueryWebClientApplication - The following 1 profile is active: "elastic_query_web"
+2023-06-19 15:17:13 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 15:17:13 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=elastic-query-web-client,config-client, profiles=[elastic_query_web], label=null, version=fe0565d6f0bb2ec0e76a08d455f0e74c4fa8059b, state=null
+2023-06-19 15:17:13 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=74ffc3b2-54ac-3c65-b35d-5bab8b85cdd7
+2023-06-19 15:17:13 [main] [,] INFO   o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-06-19 15:17:13 [main] [,] INFO   o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-19 15:17:13 [main] [,] INFO   o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-19 15:17:13 [main] [,] INFO   o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-06-19 15:17:13 [main] [,] INFO   o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-06-19 15:17:13 [main] [,] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 707 ms
+2023-06-19 15:17:13 [main] [,] WARN   o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: username cannot be null
+2023-06-19 15:17:13 [main] [,] INFO   o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2023-06-19 15:17:13 [main] [,] INFO   o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-06-19 15:17:13 [main] [,] ERROR  o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: username cannot be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservices.demo.elastic.query.web.client.ElasticQueryWebClientApplication.main(ElasticQueryWebClientApplication.java:11)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: username cannot be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: username cannot be null
+	at org.springframework.util.Assert.notNull(Assert.java:201)
+	at org.springframework.security.core.userdetails.User$UserBuilder.username(User.java:357)
+	at org.springframework.security.core.userdetails.User.withUsername(User.java:216)
+	at org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer$UserDetailsBuilder.username(UserDetailsManagerConfigurer.java:138)
+	at org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer$UserDetailsBuilder.access$100(UserDetailsManagerConfigurer.java:108)
+	at org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer.withUser(UserDetailsManagerConfigurer.java:99)
+	at com.microservices.demo.elastic.query.web.client.config.WebSecurityConfig.configure(WebSecurityConfig.java:39)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.authenticationManager(WebSecurityConfigurerAdapter.java:268)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:208)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:319)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:96)
+	at com.microservices.demo.elastic.query.web.client.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$1c8321bd.init(<generated>)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:338)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:300)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 22 common frames omitted
+2023-06-19 15:19:13 [background-preinit] [,] INFO   o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2023-06-19 15:19:13 [main] [,] INFO   c.m.d.e.q.w.c.ElasticQueryWebClientApplication - Starting ElasticQueryWebClientApplication using Java 11.0.19 on rihiroshis-MacBook-Air.local with PID 21352 (/Users/lipuhung/Documents/Udemy/Master-event-driven-microservices/self-practice/microservices-demo/elastic-query-web-client/target/classes started by lipuhung in /Users/lipuhung/Documents/Udemy/Master-event-driven-microservices/self-practice/microservices-demo)
+2023-06-19 15:19:13 [main] [,] INFO   c.m.d.e.q.w.c.ElasticQueryWebClientApplication - The following 1 profile is active: "elastic_query_web"
+2023-06-19 15:19:13 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-06-19 15:19:13 [main] [,] INFO   o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=elastic-query-web-client,config-client, profiles=[elastic_query_web], label=null, version=fd091adce51090446b5ee3855e2ae01fcd726935, state=null
+2023-06-19 15:19:13 [main] [,] INFO   o.s.cloud.context.scope.GenericScope - BeanFactory id=74ffc3b2-54ac-3c65-b35d-5bab8b85cdd7
+2023-06-19 15:19:14 [main] [,] INFO   o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8184 (http)
+2023-06-19 15:19:14 [main] [,] INFO   o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8184"]
+2023-06-19 15:19:14 [main] [,] INFO   o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-06-19 15:19:14 [main] [,] INFO   o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-06-19 15:19:14 [main] [,] INFO   o.a.c.c.C.[.[.[/elastic-query-web-client] - Initializing Spring embedded WebApplicationContext
+2023-06-19 15:19:14 [main] [,] INFO   o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 642 ms
+2023-06-19 15:19:14 [main] [,] INFO   o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5463f035, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@230232b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@56cfe6be, org.springframework.security.web.header.HeaderWriterFilter@6ce26986, org.springframework.security.web.csrf.CsrfFilter@6dd79214, org.springframework.security.web.authentication.logout.LogoutFilter@6d874695, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@489110c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@149aa7b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2abc55c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44fd7ba4, org.springframework.security.web.session.SessionManagementFilter@11e71181, org.springframework.security.web.access.ExceptionTranslationFilter@2f4d32bf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27c53c32]
+2023-06-19 15:19:14 [main] [,] INFO   o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2023-06-19 15:19:14 [main] [,] INFO   o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8184"]
+2023-06-19 15:19:14 [main] [,] INFO   o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8184 (http) with context path '/elastic-query-web-client'
+2023-06-19 15:19:14 [main] [,] INFO   c.m.d.e.q.w.c.ElasticQueryWebClientApplication - Started ElasticQueryWebClientApplication in 3.148 seconds (JVM running for 3.588)
+2023-06-19 15:19:27 [http-nio-8184-exec-1] [,] INFO   o.a.c.c.C.[.[.[/elastic-query-web-client] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-19 15:19:27 [http-nio-8184-exec-1] [,] INFO   o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-06-19 15:19:28 [http-nio-8184-exec-1] [,] INFO   o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-06-19 15:19:49 [http-nio-8184-exec-6] [,] INFO   c.m.d.e.q.w.c.api.QueryController - Querying with text test
+2023-06-19 15:19:58 [http-nio-8184-exec-7] [,] INFO   c.m.d.e.q.w.c.api.QueryController - Querying with text multi
+2023-06-19 15:20:16 [http-nio-8184-exec-8] [,] INFO   c.m.d.e.q.w.c.api.QueryController - Querying with text Better-Call-Saul
